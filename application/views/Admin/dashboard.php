@@ -6,7 +6,7 @@
   <h1>Dashboard</h1>
   <p>Welcome to dashboard.</p>
   <br><br>
-
+  <?php echo anchor('Admin/addArticle',"Add Article","class='btn btn-lg btn-success'"); ?><br><br>
   <table class="table tabble-hover table-responsive-sm ">
     <thead>
       <tr>

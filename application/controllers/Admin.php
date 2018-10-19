@@ -41,6 +41,15 @@ class Admin extends MY_Controller{
     $this->load->view('Admin/register');
   }
 
+  public function addArticle(){
+    $this->load->model('AdminLoginModel','ALM');
+    $articles=$this->ALM->articleList();
+    $id = $this->session->userdata('id');
+    $this->load->model('UserName');
+    $user_name = $this->UserName->GetName();
+    $this->load->view('Admin/add_article',['articles'=>$articles,'user_name'=>$user_name]);
+  }
+
 
 
 
