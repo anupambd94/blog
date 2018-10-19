@@ -5,7 +5,7 @@
 
 <div class="container" style="margin-top:50px;">
 
-  <?php echo form_open('Admin/userValidation'); ?>
+  <?php echo form_open('Admin/formValidation'); ?>
     <fieldset>
       <div class="row">
         <div class="col-lg-4"></div>
@@ -15,7 +15,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="title">Article Title</label>
+                <label for="Title">Article Title</label>
 
                 <?php echo form_input(['class'=>'form-control','name'=>'title','placeholder'=>'Enter article title','id'=>'title','type'=>'text','value'=>set_value('title')]); ?>
               </div>
@@ -29,7 +29,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="body">Article Body</label>
+                <label for="Body">Article Body</label>
                 <?php echo form_textarea(['class'=>'form-control','name'=>'body','placeholder'=>'Enter your article','id'=>'body','value'=>set_value('body')]); ?>
               </div>
 
@@ -40,10 +40,8 @@
 
           </div>
 
-
-
           <?php echo form_button(array('name' => 'form_submit', 'type' => 'submit', 'class' => 'btn btn-primary', 'content' => '<i class="fas fa-plus"></i> Add')); ?>
-          <?php echo form_button(array('name' => 'form_cancel', 'type' => 'cancel', 'class' => 'btn btn-danger', 'content' => '<i class="fas fa-times"></i>')); ?>
+          <?php echo form_button(array('name' => 'form_reset', 'type' => 'reset', 'class' => 'btn btn-danger', 'content' => '<i class="fas fa-times"></i>')); ?>
         </div>
 
       </div>

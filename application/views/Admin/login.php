@@ -25,7 +25,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="email">Username</label>
+                <label for="username">Username</label>
 
                 <?php echo form_input(['class'=>'form-control','name'=>'uname','placeholder'=>'Enter username','id'=>'username','type'=>'text','value'=>set_value('uname')]); ?>
               </div>

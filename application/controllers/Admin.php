@@ -42,13 +42,27 @@ class Admin extends MY_Controller{
   }
 
   public function addArticle(){
-    $this->load->model('AdminLoginModel','ALM');
-    $articles=$this->ALM->articleList();
-    $id = $this->session->userdata('id');
+
     $this->load->model('UserName');
     $user_name = $this->UserName->GetName();
-    $this->load->view('Admin/add_article',['articles'=>$articles,'user_name'=>$user_name]);
+    $this->load->view('Admin/add_article',['user_name'=>$user_name]);
   }
+
+  public function formValidation()
+   {
+
+     if($this->form_validation->run('add_article_rules')){
+       echo 'ok';
+     }else{
+
+       $this->load->model('UserName');
+       $user_name = $this->UserName->GetName();
+       $this->load->view('Admin/add_article',['user_name'=>$user_name]);
+       //echo validation_errors();
+     }
+   }
+
+
 
 
 
