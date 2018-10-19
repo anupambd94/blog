@@ -1,6 +1,19 @@
 
 <?php include('header.php');?>
 
+<?php if($error=$this->session->flashdata('Login_faild')){?>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <div class="alert alert-danger">
+          <?php echo $error; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php } ?>
+
 <div class="container" style="margin-top:50px;">
 
   <?php echo form_open('login'); ?>

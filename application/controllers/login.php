@@ -22,8 +22,8 @@ public function index()
        $this->session->set_userdata('id',$user_id);
        return redirect('Admin/welcome');
      }else{
+       $this->session->set_flashdata('Login_faild','Invalid username/password');
        return redirect('login');
-       echo "Incorrect username or password";
      }
    }else{
      $this->load->view('Admin/login');

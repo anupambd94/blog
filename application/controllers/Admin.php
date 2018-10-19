@@ -2,7 +2,10 @@
 class Admin extends MY_Controller{
 
   public function index(){
+    if( ! $this->session->userdata('id') )
     return redirect('login');
+    else
+    return redirect('admin/welcome');
   }
   public function __construct()
   {
@@ -39,7 +42,7 @@ class Admin extends MY_Controller{
   }
 
 
-  
+
 
 
 }
