@@ -3,7 +3,7 @@
 
 <div class="container" style="margin-top:50px;">
 
-  <?php echo form_open('admin/login'); ?>
+  <?php echo form_open('login'); ?>
     <fieldset>
       <div class="row">
         <div class="col-lg-4"></div>
