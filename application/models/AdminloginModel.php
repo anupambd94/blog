@@ -27,6 +27,10 @@ class AdminLoginModel extends CI_Model{
     $this->db->insert('article',$array);
     return True;
   }
+  public function add_user($array){
+    $this->db->insert('users',$array);
+    return True;
+  }
 
 
 

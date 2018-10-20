@@ -16,7 +16,7 @@ public function index()
      $uname=$this->input->post('uname');
      $pass=$this->input->post('pass');
      $this->load->model('AdminLoginModel');
-     $user_id = $this->AdminLoginModel->isvalidate($uname,$pass);
+     $user_id = $this->AdminLoginModel->isvalidate($uname,md5($pass));
 
      if($user_id){
        $this->session->set_userdata('id',$user_id);
@@ -56,11 +56,13 @@ public function sendemail()
   $this->db->get('users');
   if($this->form_validation->run('add_user_rules'))
   {
-      $post=$this->input->post();
-      $this->load->model('loginmodel','user');
+      $post=$this->input->post(array('first_name', 'last_name', 'username', 'email', 'password'));
+      $pass = $post['password'];
+      $post['password'] = md5($pass);
+      $this->load->model('AdminLoginModel','user');
       if($this->user->add_user($post))
       {
-         $this->session->set_flashdata('user','User added successfully');
+         $this->session->set_flashdata('user','Registratiion successfull. You can login now.');
          $this->session->set_flashdata('user_class','alert-success');
       }
       else

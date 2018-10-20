@@ -9,7 +9,18 @@
         <div class="col-lg-4"></div>
         <div class="col-lg-8">
           <h1>Register Form</h1>
-
+          <?php if($error=$this->session->flashdata('user')){
+            $class=$this->session->flashdata('user_class');?>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="alert <?php echo $class ?>">
+                    <?php echo $error; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">

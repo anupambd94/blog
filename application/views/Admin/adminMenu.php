@@ -7,6 +7,7 @@
   <?php echo form_open('admin/logout'); ?>
   <?php
         if($this->session->userdata('id')){
+          global $FisrtName, $LastName;
           foreach ($user_name as $name){
                   $FisrtName  = $name->first_name;
                   $LastName  = $name->last_name;

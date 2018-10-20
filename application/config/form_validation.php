@@ -17,7 +17,7 @@ $config = array(
                 array(
                         'field' => 'first_name',
                         'label' => 'First Name',
-                        'rules' => 'required|alpha_numeric_spaces'
+                        'rules' => 'required'
                 ),
                 array(
                         'field' => 'last_name',
