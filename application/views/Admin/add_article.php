@@ -41,7 +41,8 @@
           </div>
 
           <?php echo form_button(array('name' => 'form_submit', 'type' => 'submit', 'class' => 'btn btn-primary', 'content' => '<i class="fas fa-plus"></i> Add')); ?>
-          <?php echo form_button(array('name' => 'form_reset', 'type' => 'reset', 'class' => 'btn btn-danger', 'content' => '<i class="fas fa-times"></i>')); ?>
+          <a href="javascript:window.history.go(-1);"><?php echo form_button(array('name' => 'form_button', 'type' => 'button', 'class' => 'btn btn-danger', 'content' => '<i class="fas fa-times"></i>','onclick'=>'<?php echo base_url()?>Admin')); ?></a>
+
         </div>
 
       </div>
