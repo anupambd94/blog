@@ -42,19 +42,21 @@ public function index()
        return redirect('Admin/addArticle');
      }
  }
- 
+
+ public function register(){
+   $this->load->view('Admin/register');
+ }
+
 public function sendemail()
  {
 
-  $this->form_validation->set_rules('username','User Name','required|alpha');
-  $this->form_validation->set_rules('password','Password','required|max_length[12]');
-  $this->form_validation->set_rules('firstname','First Name','required|alpha');
-  $this->form_validation->set_rules('lastname','last Name','required|alpha');
-  $this->form_validation->set_rules('email','Email','required|valid_email|is_unique[users.email]');
-$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-  if($this->form_validation->run())
+
+
+  $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+  $this->db->get('users');
+  if($this->form_validation->run('add_user_rules'))
   {
-        $post=$this->input->post();
+      $post=$this->input->post();
       $this->load->model('loginmodel','user');
       if($this->user->add_user($post))
       {
@@ -66,7 +68,7 @@ $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div
         $this->session->set_flashdata('user','User not added Please try again!!');
         $this->session->set_flashdata('user_class','alert-danger');
       }
-      return redirect('users/register');
+      return redirect('Admin/register');
   //   $this->load->library('email');
 
   //   $this->email->from(set_value('email'),set_value('fname'));

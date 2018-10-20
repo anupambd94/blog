@@ -4,7 +4,7 @@
 
 
 <div class="container" style="margin-top:50px;">
-
+  <div class="jumbotron">
   <?php echo form_open('login'); ?>
     <fieldset>
       <div class="row">
@@ -62,7 +62,7 @@
 
           <?php echo form_button(array('name' => 'form_submit', 'type' => 'submit', 'class' => 'btn btn-primary', 'content' => '<i class="fas fa-sign-in-alt"></i> Login')); ?>
           <?php echo form_button(array('name' => 'form_reset', 'type' => 'reset', 'class' => 'btn btn-danger', 'content' => '<i class="fas fa-redo"></i>')); ?>
-          <?php echo anchor('Admin/register/',"Sign Up?","class='link-class'"); ?>
+          <?php echo anchor('login/register',"Sign Up?","class='link-class'"); ?>
         </div>
 
       </div>
@@ -70,6 +70,7 @@
 
     </fieldset>
   </form>
+</div>
 </div>
 
 

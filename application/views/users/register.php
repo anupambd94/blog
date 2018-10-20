@@ -92,7 +92,7 @@
 
 
           <?php echo form_button(array('type' => 'submit', 'class' => 'btn btn-primary', 'content' => '<i class="fas fa-user-plus"></i> Register')); ?>
-          <?php echo form_button(array('name' => 'form_reset', 'type' => 'reset', 'class' => 'btn btn-danger', 'content' => '<i class="fas fa-redo"></i>')); ?>
+          <?php echo form_button(array('name' => 'form_reset','type' => 'reset', 'class' => 'btn btn-danger', 'content' => '<i class="fas fa-redo"></i>')); ?>
           <?php echo anchor("Login","Already have accoutn. login?","class='link-class'"); ?>
         </div>
 

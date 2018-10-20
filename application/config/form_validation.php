@@ -13,6 +13,38 @@ $config = array(
                         'rules' => 'required|max_length[1200]|min_length[6]'
                 )
         ),
+        'add_user_rules' => array(
+                array(
+                        'field' => 'first_name',
+                        'label' => 'First Name',
+                        'rules' => 'required|alpha_numeric_spaces'
+                ),
+                array(
+                        'field' => 'last_name',
+                        'label' => 'Last Name',
+                        'rules' => 'required|alpha'
+                ),
+                array(
+                        'field' => 'username',
+                        'label' => 'Username',
+                        'rules' => 'required|alpha|is_unique[users.username]'
+                ),
+                array(
+                        'field' => 'email',
+                        'label' => 'Email',
+                        'rules' => 'required|valid_email'
+                ),
+                array(
+                        'field' => 'cpassword',
+                        'label' => 'Confirm Password',
+                        'rules' => 'required|matches[password]'
+                ),
+                array(
+                        'field' => 'password',
+                        'label' => 'Password',
+                        'rules' => 'required|max_length[12]|min_length[6]'
+                )
+        ),
         'email' => array(
                 array(
                         'field' => 'emailaddress',
