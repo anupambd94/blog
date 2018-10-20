@@ -52,7 +52,16 @@ class Admin extends MY_Controller{
    {
 
      if($this->form_validation->run('add_article_rules')){
-       echo 'ok';
+       $this->load->model('AdminLoginModel');
+       $post = $this->input->post();
+       //print_r($post);
+       $add = $this->AdminLoginModel->add_article($post);
+       if($add){
+         return redirect('Admin/welcome');
+       }else{
+         $this->session->set_flashdata('Insertion_faild','There some problem happend. Please try again.');
+         return redirect('Admin/addArticle');
+       }
      }else{
 
        $this->load->model('UserName');

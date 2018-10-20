@@ -3,12 +3,12 @@
 $config = array(
         'add_article_rules' => array(
                 array(
-                        'field' => 'title',
+                        'field' => 'article_title',
                         'label' => 'Article Title',
                         'rules' => 'required|alpha'
                 ),
                 array(
-                        'field' => 'body',
+                        'field' => 'article_body',
                         'label' => 'Article Body',
                         'rules' => 'required|max_length[1200]|min_length[6]'
                 )

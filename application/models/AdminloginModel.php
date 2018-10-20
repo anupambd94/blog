@@ -23,6 +23,11 @@ class AdminLoginModel extends CI_Model{
     return $q->result();
   }
 
+  public function add_article($array){
+    $this->db->insert('article',$array);
+    return True;
+  }
+
 
 
 }
