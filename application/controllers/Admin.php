@@ -47,7 +47,19 @@ class Admin extends MY_Controller{
     $user_name = $this->UserName->GetName();
     $this->load->view('Admin/add_article',['user_name'=>$user_name]);
   }
+  public function Delete_article(){
+    $id = $this->input->post('id');
+    $this->load->model('AdminLoginModel','delete');
+    $delete = $this->delete->delete_article($id);
+    if($delete){
+      $this->session->set_flashdata('message','Your Article Successfully deleted.');
+      return redirect('Admin/welcome');
 
+    }else{
+      $this->session->set_flashdata('Deletion_faild','There some problem happend. Please try again.');
+      return redirect('Admin/addArticle');
+    }
+  }
   public function formValidation()
    {
 
@@ -57,7 +69,9 @@ class Admin extends MY_Controller{
        //print_r($post);
        $add = $this->AdminLoginModel->add_article($post);
        if($add){
+         $this->session->set_flashdata('message','Your Article Successfully added.');
          return redirect('Admin/welcome');
+
        }else{
          $this->session->set_flashdata('Insertion_faild','There some problem happend. Please try again.');
          return redirect('Admin/addArticle');
@@ -67,6 +81,7 @@ class Admin extends MY_Controller{
        $this->load->model('UserName');
        $user_name = $this->UserName->GetName();
        $this->load->view('Admin/add_article',['user_name'=>$user_name]);
+
        //echo validation_errors();
      }
    }

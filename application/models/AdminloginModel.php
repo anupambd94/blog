@@ -27,6 +27,13 @@ class AdminLoginModel extends CI_Model{
     $this->db->insert('article',$array);
     return True;
   }
+
+  public function delete_article($id){
+    $this->db->delete('article',['id'=>$id]);
+    return True;
+  }
+
+
   public function add_user($array){
     $this->db->insert('users',$array);
     return True;

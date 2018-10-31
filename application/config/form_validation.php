@@ -5,7 +5,7 @@ $config = array(
                 array(
                         'field' => 'article_title',
                         'label' => 'Article Title',
-                        'rules' => 'required|alpha'
+                        'rules' => 'required'
                 ),
                 array(
                         'field' => 'article_body',
@@ -32,7 +32,7 @@ $config = array(
                 array(
                         'field' => 'email',
                         'label' => 'Email',
-                        'rules' => 'required|valid_email'
+                        'rules' => 'required|valid_email|is_unique[users.email]'
                 ),
                 array(
                         'field' => 'cpassword',
