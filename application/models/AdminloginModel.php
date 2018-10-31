@@ -13,11 +13,12 @@ class AdminLoginModel extends CI_Model{
 
   }
 
-  public function articleList(){
+  public function articleList($limit,$offset){
    $user_id = $this->session->userdata('id');
     $q = $this->db->select('id, article_title')
                   ->from('article')
                   ->where(['user_id'=>$user_id])
+                  ->limit($limit,$offset)
                   ->get();
 
     return $q->result();
@@ -37,6 +38,15 @@ class AdminLoginModel extends CI_Model{
   public function add_user($array){
     $this->db->insert('users',$array);
     return True;
+  }
+  public function total_rows(){
+    $id=$this->session->userdata('id');
+    $q=$this->db->select()
+                ->from('article')
+                ->where(['user_id'=>$id])
+                ->get();
+
+    return $q->num_rows();
   }
 
 

@@ -54,7 +54,10 @@
 
     </tbody>
   </table>
+  
+<?php echo $this->pagination->create_links(); ?>
 </div>
+
 </div>
 
 <?php include('footer.php');?>
